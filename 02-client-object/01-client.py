@@ -13,9 +13,9 @@ print(iam_response)
 for each_iteam in iam_response:
     print(each_iteam)
 
-for each_iteam in iam_response['users']:
+for each_iteam in iam_response['Users']:
     print(each_iteam)
 
-for each_iteam in iam_response['users']:
+for each_iteam in iam_response['Users']:
     print(each_iteam['UserName'])
 
