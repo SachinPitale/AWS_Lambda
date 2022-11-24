@@ -8,3 +8,8 @@ for each_item in iam_res.users.all():
     print(dir(each_item))
     print(each_item.user_name)
     print(each_item.create_date)
+
+
+for each_item in iam_res.users.limit(1):
+    print(each_item)
+    print(each_item.user_name)
