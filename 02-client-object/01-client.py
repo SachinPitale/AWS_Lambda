@@ -27,3 +27,8 @@ print(e2_response)
 for each_item in e2_response['Reservations']:
     for each_instance in each_item['Instances']:
         print(each_instance['InstanceId'])
+
+## List S3 buckets
+
+s3_response=s3_client.list_buckets()
+print(s3_response)
