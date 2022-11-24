@@ -29,6 +29,6 @@ for each_item in e2_response['Reservations']:
         print(each_instance['InstanceId'])
 
 ## List S3 buckets
-
+print("S3 list buckets")
 s3_response=s3_client.list_buckets()
 print(s3_response)
