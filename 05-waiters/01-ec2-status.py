@@ -11,4 +11,4 @@ response=ec2_console.describe_instances(InstanceIds=['i-06186ed7e182cc28b'])
 #print(response['Reservations'])
 for each_iteam in (response['Reservations']):
     print("########################")
-    print(each_iteam)
+    pprint(each_iteam)
