@@ -27,3 +27,7 @@ for each_item in response:
     # print(each_item['State'])
     print("###########################################################")
     print(each_item['Attachments'])
+    for i in each_item['Attachments']:
+        print(i['AttachTime'])
+        print(i['Device'])
+
