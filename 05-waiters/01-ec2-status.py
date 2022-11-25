@@ -1,5 +1,6 @@
 import boto3
 from pprint import pprint
+import time
 
 
 aws_console=boto3.session.Session()
@@ -22,8 +23,8 @@ while True:
     print(f"The current state of ec2: {my_inst_obj.state['Name']}")
     if my_inst_obj.state['Name'] == "running":
         break
-        print("Wating instance to be up")
-        time.sleep(5)
+    print("Wating instance to be up")
+    time.sleep(5)
 
 print("instance is up and running")
 
