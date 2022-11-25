@@ -9,3 +9,6 @@ pprint(response)
 
 response=ec2_client.describe_instances()['Reservations']
 pprint(response)
+
+response=ec2_client.describe_instances()['ResponseMetadata']
+pprint(response)
