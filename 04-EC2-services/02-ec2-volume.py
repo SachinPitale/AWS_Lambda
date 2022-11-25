@@ -16,5 +16,5 @@ print("###########################################################")
 
 response=ec2_client.describe_volumes()['Volumes']
 for each_item in response:
-    print(each_item['Attachments']['InstanceId'])
-    print(each_item['Attachments']['State'])
+    print(each_item['InstanceId'])
+    print(each_item['State'])
