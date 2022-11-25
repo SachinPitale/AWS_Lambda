@@ -7,5 +7,14 @@ ec2_client=aws_console.client('ec2', region_name="us-east-1")
 response=ec2_client.describe_volumes()
 print(response)
 
+print("###########################################################")
+
 response=ec2_client.describe_volumes()['Volumes']
 print(response)
+
+print("###########################################################")
+
+response=ec2_client.describe_volumes()['Volumes']
+for each_item in response:
+    print(each_item['Attachments']['InstanceId'])
+    print(each_item['Attachments']['State'])
