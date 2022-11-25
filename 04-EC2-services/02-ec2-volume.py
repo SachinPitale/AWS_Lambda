@@ -19,4 +19,4 @@ for each_item in response:
     # print(each_item['InstanceId'])
     # print(each_item['State'])
     print("###########################################################")
-    print(each_item['Attachments'][])
+    print(each_item['VolumeId'])
