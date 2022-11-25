@@ -14,12 +14,9 @@ print(response)
 
 print("###########################################################")
 
-# response=ec2_client.describe_volumes()['Volumes']
-# for each_item in response:
-#     # print(each_item['InstanceId'])
-#     # print(each_item['State'])
-#     print("###########################################################")
-#     print(each_item['VolumeId'])
+response=ec2_client.describe_volumes()['Volumes']
+for each_item in response:
+    print("The volume id is: {}\n AZ: {}\n volume type: {}\n ".format(each_item['VolumeId'],each_item['AvailabilityZone'],each_item['VolumeType']))
 
 response=ec2_client.describe_volumes()['Volumes']
 for each_item in response:
