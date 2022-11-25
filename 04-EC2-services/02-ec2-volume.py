@@ -23,8 +23,9 @@ for each_item in response:
     # print(each_item['InstanceId'])
     # print(each_item['State'])
     print("###########################################################")
-    print(each_item['Attachments'])
+    #print(each_item['Attachments'])
     for i in each_item['Attachments']:
         print(i['AttachTime'])
         print(i['Device'])
+        print(i['AttachTime'].strftime("%Y:%m:%d"))
 
