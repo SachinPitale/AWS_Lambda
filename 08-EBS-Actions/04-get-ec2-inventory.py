@@ -7,10 +7,10 @@ csv_w.writerow(["S_NO","Instance_Id",'Instance_Type','Architecture','LaunchTime'
 aws_console=boto3.session.Session()
 ec2_res=aws_console.resource('ec2')
 response=ec2_res.instances.all()
-
+cnt=1
 for each in response:
-    print(each.instance_id,each.instance_type,each.architecture,each.launch_time.strftime("%Y-%m-%d"),each.private_ip_address)
+    print(cnt,each.instance_id,each.instance_type,each.architecture,each.launch_time.strftime("%Y-%m-%d"),each.private_ip_address)
     csv_w.writerow([cnt,each.instance_id,each.instance_type,each.architecture,each.launch_time.strftime("%Y-%m-%d"),each.private_ip_address])
-
+    cnt+=1
 csv_ob.close()
     
