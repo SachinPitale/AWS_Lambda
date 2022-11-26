@@ -1,7 +1,7 @@
 import boto3
 
 aws_console=boto3.session.Session()
-ec2_client=aws_console.client('ec2')
+ec2_con_cli=aws_console.client('ec2')
 
 #response=ec2_client.describe_volumes()['Volumes']
 #print(response)
@@ -14,7 +14,8 @@ ec2_client=aws_console.client('ec2')
 #         print("Tags is not avaliable for {each_item['VolumeId']}")
 
 
-response=ec2_client.describe_volumes()['Volumes']
-for each_item in response:
-    if not "Tags" in each_item and each_item['State']=='available':
-        print(each_item['VolumeId'], each_item['State'])
+for each_item in ec2_con_cli.describe_volumes()['Volumes']:
+	if not "Tags" in each_item  and each_item['State']=='available':
+		print('Deleting ',each_item['VolumeId'])
+		ec2_con_cli.delete_volume(VolumeId=each_item['VolumeId'])
+print("Delete all unused and untagged volumes.")
