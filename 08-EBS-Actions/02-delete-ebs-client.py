@@ -7,5 +7,8 @@ ec2_client=aws_console.client('ec2')
 #print(response)
 for each_item in ec2_client.describe_volumes()['Volumes']:
     print(each_item['VolumeId'], each_item['State'])
-    if each_item['Tags']:
-        print(each_item['Tags'])
+    try:
+        if each_item['Tags']:
+            print(each_item['Tags'])
+    except:
+        print(f"Tags is not avaliable for {each_item['VolumeId']}")
